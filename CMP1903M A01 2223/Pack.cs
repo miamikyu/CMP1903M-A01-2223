@@ -22,7 +22,7 @@ namespace CMP1903M_A01_2223
             {
                 for (int cardValue=1; cardValue<14; cardValue=cardValue+1)
                 {
-                    Card newCard=new Card();
+                    Card newCard=new Card(suit, cardValue);
                     pack.Add(newCard)
                 }
             }
