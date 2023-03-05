@@ -15,15 +15,15 @@ namespace CMP1903M_A01_2223
             
             
         //nested for loop for each suit, each containing 13 cards
-        //ask richard wtf is going on 
-        //erm variables maybe not seen across classes oops
-        
-            for (int y=1; y<5; y=y+1)
+        //may have fixed this using the variable names from card.cs
+        //think scope is still wrong though
+
+            for (int suit=1; suit<5; suit=suit+1)
             {
-                for (int i=1; i<14; i=i+1)
+                for (int cardValue=1; cardValue<14; cardValue=cardValue+1)
                 {
-                    Card new_card=new Card();
-                    pack.Add(new_card)
+                    Card newCard=new Card();
+                    pack.Add(newCard)
                 }
             }
         
