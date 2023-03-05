@@ -12,6 +12,18 @@ namespace CMP1903M_A01_2223
 
         public Pack()
         {
+            
+            
+        //nested for loop for each suit, each containing 13 cards
+            for (int y=1; y<5; y=y+1)
+            {
+                for (int i=1; i<14; i=i+1)
+                {
+                    Card new_card=new Card();
+                    pack.Add(new_card)
+                }
+            }
+        
             //Initialise the card pack here 
             
         }
