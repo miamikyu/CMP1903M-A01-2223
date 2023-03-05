@@ -12,13 +12,14 @@ namespace CMP1903M_A01_2223
 
         public Pack()
         {
-            //Initialise the card pack here
+            //Initialise the card pack here 
+            
         }
 
         public static bool shuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
-
+            // Test
         }
         public static Card deal()
         {
