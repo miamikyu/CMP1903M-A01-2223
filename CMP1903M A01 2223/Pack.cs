@@ -15,6 +15,9 @@ namespace CMP1903M_A01_2223
             
             
         //nested for loop for each suit, each containing 13 cards
+        //ask richard wtf is going on 
+        //erm variables maybe not seen across classes oops
+        
             for (int y=1; y<5; y=y+1)
             {
                 for (int i=1; i<14; i=i+1)
