@@ -6,46 +6,61 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-    class Card
+    enum suitEnum
+    {
+        Hearts=1,
+        Diamonds=2,
+        Clubs=3,
+        Spades=4,
+    }
+    public class Card
     {
         //Base for the Card class.
         //sets the private fields and public properties of the class
-
-        private int cardValue
-        public int Value 
-        private int suit 
-        public int Suit
+        //fucking semi colons
+        private int cardValue;
+        private int suit;
+        public Card(int ccardValue, int cardSuit)
+        {
+            cardValue = ccardValue;
+            suit = cardSuit;
+        }
 
         //Value: numbers 1 - 13
         //Suit: numbers 1 - 4
         //The 'set' methods for these properties could have some validation
-        public int Value {
+        public int Value 
+        {
             get{
-                return Value;
+                return cardValue;
             } 
             set{
                 if(value<15){
-                    Value=value;
+                    cardValue=value;
                 }else{
+                    Console.WriteLine("Error");
                     //Error
                 }
             } 
         }
         //using the getter and setter for validation and to change numerical value to a string
-        public int Suit {
+        public int Suit 
+        {
             get{
-                return Suit;
+                return suit;
             } 
             set{
                 if(value==1){
-                    Suit="Hearts";
+                    suit=(int)suitEnum.Hearts;
                 }else if(value==2){
-                    Suit="Diamonds";
+                    suit= (int)suitEnum.Diamonds;
                 }else if(value==3){
-                    Suit="Clubs";
+                    suit=(int)suitEnum.Clubs;
                 }else if(value==4){
-                    Suit="Spades";
-                }else{
+                    suit=(int)suitEnum.Spades;
+                }
+                else{
+                    Console.WriteLine("Error"); 
                     //Error
                 }
             } 
