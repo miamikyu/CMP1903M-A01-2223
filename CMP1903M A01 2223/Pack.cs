@@ -52,7 +52,8 @@ namespace CMP1903M_A01_2223
                 Random rnd = new Random(); //used to create random numbers
                 List<Card> pack = new List<Card>();
                 int numElements = List<Card>.Count;
-                while (numElements = !0)
+                int tempVar = 0;
+                while (numElements != 0)
                 {
                     int fyRandomNumber = rnd.Next(0, 51); //creates a random number up to 52 to select from pack
                     //0 to 51 used for starting at element 0
