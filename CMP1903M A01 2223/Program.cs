@@ -43,7 +43,7 @@ namespace CMP1903M_A01_2223
                 else
                 {
                     Console.WriteLine("Enter the amount of cards you would like to deal");
-                    Console.WriteLine(">>")
+                    Console.WriteLine(">>");
                     int numOfCardsDealt = Console.ReadLine();
                     Pack.dealCard(numOfCardsDealt);
                 }
