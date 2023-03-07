@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace CMP1903M_A01_2223
         {
             foreach (Card card in pack)
             {
-                Console.Write($"{card.Value}-{card.Suit} ");
+                Console.Write($"{card.Value}-{card.Suit}, ");
                 
             }
         }
@@ -63,9 +64,33 @@ namespace CMP1903M_A01_2223
                 }
                 pack = fyPack;
             }
-            else
+            else if (typeofShuffle == 2) //riffle shuffle time 
             {
-                return true;
+                //creates lists for the shuffled list and the two halves of the original list 
+                List<Card> rsPack = new List<Card>();
+                List<Card> rsHalfPack1 = new List<Card>();
+                List<Card> rsHalfPack2 = new List<Card>();
+                //halfs the pack list into two lists 
+                int midPoint = pack.Count / 2;
+                //getting the max number 
+                int numElements = pack.Count;
+                //this gets the first half of pack into a new list 
+                for (int i = 0; midPoint-1; i++)
+                {
+                    rsHalfPack1.Add(pack[i]);
+                }
+                //thsi gets the second half of pack into a list 
+                for (midPoint; numElements; midPoint++)
+                {
+                    rsHalfPack2.Add(pack[midPoint]);
+                }
+                //this joins them both together 
+                for (int j = 0; numElements; j++)
+                {
+                    rsPack.Add(rsHalfPack1[j]);
+                    rsPack.Add(rsHalfPack2[j]);
+                }
+
             }
             return true;
             
