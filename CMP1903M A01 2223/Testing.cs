@@ -16,7 +16,7 @@ namespace CMP1903M_A01_2223
         }
         public void runTests()
         {
-            Pack.shuffleCardPack(1);
+            Pack.shuffleCardPack(1)
             testPack.showCards();
             
         }

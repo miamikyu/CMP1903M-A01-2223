@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -55,12 +56,12 @@ namespace CMP1903M_A01_2223
                 Card tempVar;
                 while (numElements != 0)
                 {
-                    int fyRandomNumber = rnd.Next(0, pack.Count-1); //creates a random number up to 52 to select from pack
+                    int fyRandomNumber = rnd.Next(0, pack.Count - 1); //creates a random number up to 52 to select from pack
                     //0 to 51 used for starting at element 0
                     tempVar = pack[fyRandomNumber];
                     fyPack.Add(tempVar);
                     pack.RemoveAt(fyRandomNumber);
-                    numElements --;
+                    numElements--;
                 }
                 pack = fyPack;
             }
@@ -75,32 +76,40 @@ namespace CMP1903M_A01_2223
                 //getting the max number 
                 int numElements = pack.Count;
                 //this gets the first half of pack into a new list 
-                for (int i = 0; i=midPoint-1; i++)
+                for (int i = 0; i = midPoint - 1; i++)
                 {
                     rsHalfPack1.Add(pack[i]);
                 }
                 //thsi gets the second half of pack into a list 
-                for (int k=midPoint; k=numElements; k++)
+                for (int k = midPoint; k = numElements; k++)
                 {
                     rsHalfPack2.Add(pack[midPoint]);
                 }
                 //this joins them both together 
-                for (int j = 0; j=numElements; j++)
+                for (int j = 0; j = numElements; j++)
                 {
                     rsPack.Add(rsHalfPack1[j]);
                     rsPack.Add(rsHalfPack2[j]);
                 }
                 pack = rsPack;
-
             }
-            return true;
-            
-          
+            else 
+            {
+                //no shuffle was done 
+                return pack;
+            }
+            //Error
+            return false;
+                
+             
+
         }
         public static Card deal()
         {
-            return new Card(1, 2);
             //Deals one card
+            Random rnd = new Random();
+            int oneRandomCard = rnd.Next(0, pack.Count - 1);
+            Console.WriteLine(pack[oneRandomCard]);
 
         }
         public static List<Card> dealCard(int amount)
