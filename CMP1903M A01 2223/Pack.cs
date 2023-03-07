@@ -64,7 +64,7 @@ namespace CMP1903M_A01_2223
                 }
                 pack = fyPack;
             }
-            else if (typeofShuffle == 2) //riffle shuffle time 
+            else if (typeOfShuffle == 2) //riffle shuffle time 
             {
                 //creates lists for the shuffled list and the two halves of the original list 
                 List<Card> rsPack = new List<Card>();
@@ -75,21 +75,22 @@ namespace CMP1903M_A01_2223
                 //getting the max number 
                 int numElements = pack.Count;
                 //this gets the first half of pack into a new list 
-                for (int i = 0; midPoint-1; i++)
+                for (int i = 0; i=midPoint-1; i++)
                 {
                     rsHalfPack1.Add(pack[i]);
                 }
                 //thsi gets the second half of pack into a list 
-                for (midPoint; numElements; midPoint++)
+                for (int k=midPoint; k=numElements; k++)
                 {
                     rsHalfPack2.Add(pack[midPoint]);
                 }
                 //this joins them both together 
-                for (int j = 0; numElements; j++)
+                for (int j = 0; j=numElements; j++)
                 {
                     rsPack.Add(rsHalfPack1[j]);
                     rsPack.Add(rsHalfPack2[j]);
                 }
+                pack = rsPack;
 
             }
             return true;
