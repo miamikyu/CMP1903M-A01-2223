@@ -9,6 +9,8 @@ namespace CMP1903M_A01_2223
     public class Pack
     {
         static List<Card> pack;
+        static List<Card> fyPack; //fisher yates shuffle pack
+     
 
         public Pack()
         {
@@ -40,12 +42,31 @@ namespace CMP1903M_A01_2223
         }
 
            
-
+        //Class for creating the shuffle 
         public static bool shuffleCardPack(int typeOfShuffle)
         {
-            return true;
             //Shuffles the pack based on the type of shuffle
-            // Test
+            if (typeOfShuffle == 1) //this will become the Fisher-Yates shuffle
+            {
+                fyPack = new List<Card>();
+                Random rnd = new Random(); //used to create random numbers
+                List<Card> pack = new List<Card>();
+                int numElements = List<Card>.Count;
+                while (numElements = !0)
+                {
+                    int fyRandomNumber = rnd.Next(0, 51); //creates a random number up to 52 to select from pack
+                    //0 to 51 used for starting at element 0
+                    tempVar = pack[fyRandomNumber];
+                    fyPack.Add(tempVar);
+                    pack.RemoveAt(fyRandomNumber);
+                }
+            }
+            else
+            {
+                return true;
+            }
+            
+          
         }
         public static Card deal()
         {
