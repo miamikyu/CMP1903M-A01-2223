@@ -54,7 +54,7 @@ namespace CMP1903M_A01_2223
                 Card tempVar;
                 while (numElements != 0)
                 {
-                    int fyRandomNumber = rnd.Next(0, 51); //creates a random number up to 52 to select from pack
+                    int fyRandomNumber = rnd.Next(0, pack.Count-1); //creates a random number up to 52 to select from pack
                     //0 to 51 used for starting at element 0
                     tempVar = pack[fyRandomNumber];
                     fyPack.Add(tempVar);
