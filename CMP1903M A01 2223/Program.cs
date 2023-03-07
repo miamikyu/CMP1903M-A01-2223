@@ -10,21 +10,21 @@ namespace CMP1903M_A01_2223
     {
         static void Main(string[] args)
         {
-            Testing tests = new Testing();
-            tests.runTests();
-            Console.ReadLine();
+            //Testing tests = new Testing();
+            //tests.runTests();
+            //Console.ReadLine();
 
             Console.WriteLine("Enter what number shuffle you would like to do");
             Console.WriteLine("Enter 1 for Fisher Yates Shuffle");
             Console.WriteLine("Enter 2 for Riffle Shuffle");
             Console.WriteLine("Enter 3 for other options");
             Console.WriteLine(">>");
-            int answer = Console.ReadLine();
-            if (answer == 1)
+            string answer = Console.ReadLine();
+            if (answer == "1")
             {
                 Pack.shuffleCardPack(1);
             }
-            else if (answer == 2)
+            else if (answer == "2")
             {
                 Pack.shuffleCardPack(2);
             }
@@ -34,8 +34,8 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine("Enter 1 to deal 1 card");
                 Console.WriteLine("Enter 2 to deal an amount of cards of your choosing");
                 Console.WriteLine(">>");
-                int nextAnswer = Console.ReadLine();
-                if (nextAnswer == 1) 
+                string nextAnswer = Console.ReadLine();
+                if (nextAnswer == "1") 
                 {
                     Pack.deal();
                     Console.ReadLine();
