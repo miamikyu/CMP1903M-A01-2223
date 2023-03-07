@@ -114,8 +114,13 @@ namespace CMP1903M_A01_2223
         }
         public static List<Card> dealCard(int amount)
         {
-            return new List<Card>();
             //Deals the number of cards specified by 'amount'
+            Random rnd = new Random();
+            int randomCard = rnd.Next(0, pack.Count - 1);
+            for (int i = 0; i = amount; i++)
+            {
+                Console.WriteLine(pack[randomCard]);
+            }
         }
     }
 }
