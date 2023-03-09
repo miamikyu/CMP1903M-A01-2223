@@ -50,6 +50,7 @@ namespace CMP1903M_A01_2223
             //Shuffles the pack based on the type of shuffle
             if (typeOfShuffle == 1) //this will become the Fisher-Yates shuffle
             {
+               
                 Random rnd = new Random(); //used to create random numbers
                 List<Card> fyPack = new List<Card>();
                 int numElements = pack.Count;
@@ -76,17 +77,17 @@ namespace CMP1903M_A01_2223
                 //getting the max number 
                 int numElements = pack.Count;
                 //this gets the first half of pack into a new list 
-                for (int i = 0; i = midPoint - 1; i++)
+                for (int i = 0; i <= midPoint - 1; i++)
                 {
                     rsHalfPack1.Add(pack[i]);
                 }
-                //thsi gets the second half of pack into a list 
-                for (int k = midPoint; k = numElements; k++)
+                //this gets the second half of pack into a list 
+                for (int k = midPoint; k <= numElements; k++)
                 {
                     rsHalfPack2.Add(pack[midPoint]);
                 }
                 //this joins them both together 
-                for (int j = 0; j = numElements; j++)
+                for (int j = 0; j <= numElements; j++)
                 {
                     rsPack.Add(rsHalfPack1[j]);
                     rsPack.Add(rsHalfPack2[j]);
@@ -96,7 +97,9 @@ namespace CMP1903M_A01_2223
             else 
             {
                 //no shuffle was done 
-                return pack;
+                Pack pack = new Pack();
+                pack.showCards();
+                return true;
             }
             //Error
             return false;
@@ -121,7 +124,7 @@ namespace CMP1903M_A01_2223
             List<Card> dealtCards = new List<Card>();
             int randomCard = rnd.Next(0, pack.Count - 1);
             //for loop will go until the amount specified by user 
-            for (int i = 0; i = amount; i++)
+            for (int i = 0; i <= amount; i++)
             {
                 dealtCards.Add(pack[randomCard]);
             }
