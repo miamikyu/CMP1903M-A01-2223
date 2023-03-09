@@ -93,12 +93,13 @@ namespace CMP1903M_A01_2223
                     rsPack.Add(rsHalfPack2[j]);
                 }
                 pack = rsPack;
+                Program.pack.showCards();
             }
             else 
             {
                 //no shuffle was done 
                 Pack pack = new Pack();
-                pack.showCards();
+                Program.pack.showCards();
                 return true;
             }
             //Error
@@ -128,7 +129,8 @@ namespace CMP1903M_A01_2223
             {
                 dealtCards.Add(pack[randomCard]);
             }
-            pack= dealtCards;
+            Pack Program.pack = new Pack();
+            Program.pack= dealtCards;
             return dealtCards;
         }
     }
