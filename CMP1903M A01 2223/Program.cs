@@ -14,8 +14,8 @@ namespace CMP1903M_A01_2223
             //Testing tests = new Testing();
             //tests.runTests();
             //Console.ReadLine();
-            bool continue= true;
-            while (continue= true)
+            bool userContinue= true;
+            while (userContinue == true)
             {
                 Console.WriteLine("Enter what number shuffle you would like to do");
                 Console.WriteLine("Enter 1 for Fisher Yates Shuffle");
@@ -27,12 +27,12 @@ namespace CMP1903M_A01_2223
                 if (answer == "1")
                 {
                     Pack.shuffleCardPack(1);
-                    continue= false;
+                    userContinue = false;
                 }
                 else if (answer == "2")
                 {
                     Pack.shuffleCardPack(2);
-                    continue= false;
+                    userContinue = false;
                 }
                 else if (answer == "3")
                 {
@@ -45,7 +45,7 @@ namespace CMP1903M_A01_2223
                     {
                         Pack.deal();
                         Console.ReadLine();
-                        continue= false;
+                        userContinue = false;
                     }
                     else if (nextAnswer == "2")
                     {
@@ -53,12 +53,12 @@ namespace CMP1903M_A01_2223
                         Console.WriteLine(">>");
                         int numOfCardsDealt = Console.ReadLine();
                         Pack.dealCard(numOfCardsDealt);
-                        continue= false;
+                        userContinue = false;
                     }
                     else
                     {
-                        Console.WriteLine("Answer not found")
-                        continue= true;
+                        Console.WriteLine("Answer not found");
+                        userContinue = true;
                     }
                 }
             }
