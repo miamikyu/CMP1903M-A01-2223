@@ -11,16 +11,15 @@ namespace CMP1903M_A01_2223
     public class Pack
     {
         static List<Card> pack;
-      
-     
+
+        static int cards_dealt = 0;
 
         public Pack()
         {
             
             
         //nested for loop for each suit, each containing 13 cards
-        
-            pack= new List<Card>();
+            pack = new List<Card>();
             for (int suit=1; suit<5; suit=suit+1)
             {
                 for (int cardValue=1; cardValue<14; cardValue=cardValue+1)
@@ -39,11 +38,20 @@ namespace CMP1903M_A01_2223
             foreach (Card card in pack)
             {
                 Console.Write($"{card.Value}-{card.Suit}, ");
-                
+
+            }
+        }
+        public void showCards(List<Card> cards)
+        {
+            foreach (Card card in cards)
+            {
+                Console.Write($"{card.Value}-{card.Suit}, ");
+
             }
         }
 
-           
+
+
         //Class for creating the shuffle 
         public static bool shuffleCardPack(int typeOfShuffle)
         {
@@ -87,19 +95,18 @@ namespace CMP1903M_A01_2223
                     rsHalfPack2.Add(pack[midPoint]);
                 }
                 //this joins them both together 
-                for (int j = 0; j <= numElements; j++)
+                for (int j = 0; j < rsHalfPack1.Count; j++)
                 {
                     rsPack.Add(rsHalfPack1[j]);
                     rsPack.Add(rsHalfPack2[j]);
                 }
                 pack = rsPack;
-                Program.pack.showCards();
             }
-            else 
+            else if (typeOfShuffle==3)//no shuffle
             {
                 //no shuffle was done 
                 Pack pack = new Pack();
-                Program.pack.showCards();
+                pack.showCards();
                 return true;
             }
             //Error
@@ -111,26 +118,30 @@ namespace CMP1903M_A01_2223
         public static Card deal()
         {
             //Deals one card
-            Random rnd = new Random();
-            int oneRandomCard = rnd.Next(0, pack.Count - 1);
-            return pack[oneRandomCard];
+            Card to_deal = pack[cards_dealt];
+            cards_dealt++;
+            return to_deal;
 
         }
         public static List<Card> dealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
-            //creates a random number to generate the specific amount of random cards 
-            Random rnd = new Random();
+            
             //new list to store the dealt cards
             List<Card> dealtCards = new List<Card>();
-            int randomCard = rnd.Next(0, pack.Count - 1);
-            //for loop will go until the amount specified by user 
-            for (int i = 0; i <= amount; i++)
+
+            if (amount > pack.Count - cards_dealt)
             {
-                dealtCards.Add(pack[randomCard]);
+                Console.WriteLine("Too many Cards");
+                return dealtCards;
             }
-            Pack Program.pack = new Pack();
-            Program.pack= dealtCards;
+            
+            //for loop will go until the amount specified by user 
+            for (int i = 0; i < amount; i++)
+            {
+                dealtCards.Add(pack[cards_dealt + i]);
+            }
+            cards_dealt += amount;
             return dealtCards;
         }
     }

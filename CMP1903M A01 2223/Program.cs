@@ -9,9 +9,10 @@ namespace CMP1903M_A01_2223
 {
     class Program
     {
-        public static Pack pack = new Pack();
+        
         static void Main(string[] args)
         {
+            Pack pack = new Pack();
             //Testing tests = new Testing();
             //tests.runTests();
             //Console.ReadLine();
@@ -21,7 +22,7 @@ namespace CMP1903M_A01_2223
                 Console.WriteLine("Enter what number shuffle you would like to do");
                 Console.WriteLine("Enter 1 for Fisher Yates Shuffle");
                 Console.WriteLine("Enter 2 for Riffle Shuffle");
-                Console.WriteLine("Enter 3 for other options");
+                Console.WriteLine("Enter 3 for no shuffle");
 
 
                 string answer = Console.ReadLine();
@@ -29,41 +30,45 @@ namespace CMP1903M_A01_2223
                 {
                     Pack.shuffleCardPack(1);
                     userContinue = false;
+                    pack.showCards();
                 }
                 else if (answer == "2")
                 {
                     Pack.shuffleCardPack(2);
                     userContinue = false;
+                    pack.showCards();
                 }
                 else if (answer == "3")
                 {
-                    Console.WriteLine("For other options:");
-                    Console.WriteLine("Enter 1 to deal 1 card");
-                    Console.WriteLine("Enter 2 to deal an amount of cards of your choosing");
+                    Pack.shuffleCardPack(3);
+                    userContinue = false;
+                    pack.showCards();
 
-                    string nextAnswer = Console.ReadLine();
-                    if (nextAnswer == "1")
-                    {
-                        Pack.deal();
-                        Console.ReadLine();
-                        userContinue = false;
-                    }
-                    else if (nextAnswer == "2")
-                    {
-                        Console.WriteLine("Enter the amount of cards you would like to deal");
-
-                        //takes the input as an int
-                        int numOfCardsDealt = Int32.Parse(Console.ReadLine());
-                        Pack.dealCard(numOfCardsDealt);
-                        userContinue = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Answer not found");
-                        userContinue = true;
-                    }
                 }
-            }         
+            }
+            Console.WriteLine("Enter 1 to deal 1 card");
+            Console.WriteLine("Enter 2 to deal an amount of cards of your choosing");
+
+            string nextAnswer = Console.ReadLine();
+            if (nextAnswer == "1")
+            {
+                Card card = Pack.deal();
+                Console.Write($"{card.Value}-{card.Suit}, ");
+            }
+            else if (nextAnswer == "2")
+            {
+                Console.WriteLine("Enter the amount of cards you would like to deal");
+
+                //takes the input as an int
+                int numOfCardsDealt = Int32.Parse(Console.ReadLine());
+                List<Card> cardsToDeal = Pack.dealCard(numOfCardsDealt);
+                pack.showCards(cardsToDeal);
+            }
+            else
+            {
+                Console.WriteLine("Answer not found");
+            }
+        Console.ReadLine();
         }
     }
 }

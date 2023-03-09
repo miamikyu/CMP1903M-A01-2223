@@ -18,8 +18,8 @@ namespace CMP1903M_A01_2223
         //Base for the Card class.
         //sets the private fields and public properties of the class
         //fucking semi colons
-        private int cardValue;
-        private int suit;
+        internal int cardValue;
+        internal int suit;
         public Card(int ccardValue, int cardSuit)
         {
             cardValue = ccardValue;
