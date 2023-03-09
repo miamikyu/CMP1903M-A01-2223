@@ -24,7 +24,7 @@ namespace CMP1903M_A01_2223
             {
                 for (int cardValue=1; cardValue<14; cardValue=cardValue+1)
                 {
-                    Card newCard=new Card(suit, cardValue);
+                    Card newCard=new Card(cardValue, suit);
                     pack.Add(newCard);
                 }
             }
@@ -37,7 +37,8 @@ namespace CMP1903M_A01_2223
         {
             foreach (Card card in pack)
             {
-                Console.Write($"{card.Value}-{card.Suit}, ");
+                //Console.Write($"{card.suit}, ");
+                Console.Write(card.ToString());
 
             }
         }
@@ -45,8 +46,8 @@ namespace CMP1903M_A01_2223
         {
             foreach (Card card in cards)
             {
-                Console.Write($"{card.Value}-{card.Suit}, ");
-
+                //Console.Write($"{card.suit}, ");
+                Console.Write(card.ToString());
             }
         }
 

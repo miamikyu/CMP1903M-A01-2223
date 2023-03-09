@@ -65,5 +65,18 @@ namespace CMP1903M_A01_2223
                 }
             } 
         }
+
+        public override string ToString()
+        {
+            if (suit > 0 && suit < 15)
+            {
+                string suitName = Enum.GetNames(typeof(suitEnum))[suit - 1];
+                return $"{cardValue} - {suitName}, ";
+            }
+            else
+            {
+                return "Invalid Card";
+            }
+            }
     }
 }

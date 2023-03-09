@@ -46,14 +46,14 @@ namespace CMP1903M_A01_2223
 
                 }
             }
-            Console.WriteLine("Enter 1 to deal 1 card");
+            Console.WriteLine("\nEnter 1 to deal 1 card");
             Console.WriteLine("Enter 2 to deal an amount of cards of your choosing");
 
             string nextAnswer = Console.ReadLine();
             if (nextAnswer == "1")
             {
                 Card card = Pack.deal();
-                Console.Write($"{card.Value}-{card.Suit}, ");
+                Console.Write(card.ToString());
             }
             else if (nextAnswer == "2")
             {
